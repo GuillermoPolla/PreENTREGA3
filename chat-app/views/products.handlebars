@@ -1,0 +1,25 @@
+{{#> main}}
+<header>
+    <h1>Lista de Productos</h1>
+    <p>Bienvenido, {{user.username}} ({{user.role}})</p>
+    <a href="/auth/logout">Cerrar sesión</a>
+    <a href="/cart" id="view-cart">Ver carrito</a> <!-- Agregar el botón de Ver carrito -->
+</header>
+<main>
+    <ul>
+        {{#each products}}
+            <li>
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <p>Precio: {{price}}</p>
+                <p>Código: {{code}}</p>
+                <p>Stock: {{stock}}</p>
+                <p>Categoría: {{category}}</p>
+                <img src="{{thumbnail}}" alt="{{title}}" />
+                <button class="add-to-cart" data-id="{{_id}}">Agregar al carrito</button>
+            </li>
+        {{/each}}
+    </ul>
+</main>
+<script src="/js/cart.js"></script>
+{{/main}}

@@ -1,0 +1,26 @@
+{{#> main}}
+<header>
+    <h1>Carrito de Compras</h1>
+    <a href="/auth/logout">Cerrar sesión</a>
+</header>
+<main>
+    {{#if isEmpty}}
+        <p>El carrito está vacío</p>
+    {{else}}
+        <ul>
+            {{#each cart.products}}
+                <li>
+                    <h2>{{this.productId.title}}</h2>
+                    <p>{{this.productId.description}}</p>
+                    <p>Precio: {{this.productId.price}}</p>
+                    <p>Cantidad: {{this.quantity}}</p>
+                </li>
+            {{/each}}
+        </ul>
+        <h3>Total a pagar: {{totalAmount}}</h3>
+        <form action="/api/carts/purchase" method="post">
+            <button type="submit">Finalizar Compra</button>
+        </form>
+    {{/if}}
+</main>
+{{/main}}

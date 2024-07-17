@@ -1,0 +1,13 @@
+<!-- src/views/realtimeproducts.handlebars -->
+{{#*inline "scripts"}}
+<script src="/js/realtimeproducts.js" defer></script>
+{{/inline}}
+
+{{#> layout 'main'}}
+<header>
+    <h1>Productos en Tiempo Real</h1>
+</header>
+<main>
+    <ul id="productList"></ul>
+</main>
+{{/layout}}

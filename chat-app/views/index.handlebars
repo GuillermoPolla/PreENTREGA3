@@ -1,0 +1,17 @@
+<!-- src/views/index.handlebars -->
+{{#*inline "scripts"}}
+<script src="/js/index.js" defer></script>
+{{/inline}}
+
+{{#> layout 'main'}}
+<header>
+    <h1>Chat Comunitario</h1>
+</header>
+<main>
+    <div id="chatBox">
+        <ul id="messages"></ul>
+        <input id="messageInput" type="text" placeholder="Escribe tu mensaje aquí" />
+        <button id="sendMessageButton">Enviar</button>
+    </div>
+</main>
+{{/layout}}
